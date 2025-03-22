@@ -13,6 +13,10 @@ class Dream {
     var details: String
     var intensity: Double
     var date: Date
+	
+	var entity: DreamEntity {
+		DreamEntity(id: uniqueID, title: title, details: details)
+	}
 
     init(title: String, details: String, intensity: Double, date: Date) {
         self.title = title

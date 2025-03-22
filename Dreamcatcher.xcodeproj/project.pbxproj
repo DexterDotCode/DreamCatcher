@@ -14,6 +14,11 @@
 		51C500182D7AE34600A230C5 /* DreamcatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C500102D7AE34600A230C5 /* DreamcatcherApp.swift */; };
 		51C500192D7AE34600A230C5 /* DreamEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C500112D7AE34600A230C5 /* DreamEditor.swift */; };
 		51C5001A2D7AE34600A230C5 /* DreamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C500122D7AE34600A230C5 /* DreamList.swift */; };
+		BB07C5BE2D8DEF000029DBBC /* CountRecentDreamsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07C5BD2D8DEF000029DBBC /* CountRecentDreamsIntent.swift */; };
+		BB07C5C02D8DF1100029DBBC /* ShortcutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07C5BF2D8DF1100029DBBC /* ShortcutsProvider.swift */; };
+		BB1D85022D8E780D009480DE /* DreamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D85012D8E780D009480DE /* DreamEntity.swift */; };
+		BB1D85042D8E9D79009480DE /* DreamReminderIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D85032D8E9D79009480DE /* DreamReminderIntent.swift */; };
+		BB1D85062D8EA3E1009480DE /* AddToRecentDreamIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D85052D8EA3E1009480DE /* AddToRecentDreamIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		51C500112D7AE34600A230C5 /* DreamEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamEditor.swift; sourceTree = "<group>"; };
 		51C500122D7AE34600A230C5 /* DreamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamList.swift; sourceTree = "<group>"; };
 		51C5FFF42D7ADC2300A230C5 /* Dreamcatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamcatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB07C5BD2D8DEF000029DBBC /* CountRecentDreamsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountRecentDreamsIntent.swift; sourceTree = "<group>"; };
+		BB07C5BF2D8DF1100029DBBC /* ShortcutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsProvider.swift; sourceTree = "<group>"; };
+		BB1D85012D8E780D009480DE /* DreamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamEntity.swift; sourceTree = "<group>"; };
+		BB1D85032D8E9D79009480DE /* DreamReminderIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamReminderIntent.swift; sourceTree = "<group>"; };
+		BB1D85052D8EA3E1009480DE /* AddToRecentDreamIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToRecentDreamIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,11 @@
 				51C500112D7AE34600A230C5 /* DreamEditor.swift */,
 				51C5000F2D7AE34600A230C5 /* Dream.swift */,
 				51C5000E2D7AE34600A230C5 /* DataController.swift */,
+				BB07C5BD2D8DEF000029DBBC /* CountRecentDreamsIntent.swift */,
+				BB1D85012D8E780D009480DE /* DreamEntity.swift */,
+				BB1D85032D8E9D79009480DE /* DreamReminderIntent.swift */,
+				BB1D85052D8EA3E1009480DE /* AddToRecentDreamIntent.swift */,
+				BB07C5BF2D8DF1100029DBBC /* ShortcutsProvider.swift */,
 				51C500102D7AE34600A230C5 /* DreamcatcherApp.swift */,
 			);
 			path = Dreamcatcher;
@@ -142,7 +157,12 @@
 			files = (
 				51C500152D7AE34600A230C5 /* ContentView.swift in Sources */,
 				51C500162D7AE34600A230C5 /* DataController.swift in Sources */,
+				BB1D85022D8E780D009480DE /* DreamEntity.swift in Sources */,
+				BB1D85042D8E9D79009480DE /* DreamReminderIntent.swift in Sources */,
+				BB1D85062D8EA3E1009480DE /* AddToRecentDreamIntent.swift in Sources */,
+				BB07C5BE2D8DEF000029DBBC /* CountRecentDreamsIntent.swift in Sources */,
 				51C500172D7AE34600A230C5 /* Dream.swift in Sources */,
+				BB07C5C02D8DF1100029DBBC /* ShortcutsProvider.swift in Sources */,
 				51C500182D7AE34600A230C5 /* DreamcatcherApp.swift in Sources */,
 				51C500192D7AE34600A230C5 /* DreamEditor.swift in Sources */,
 				51C5001A2D7AE34600A230C5 /* DreamList.swift in Sources */,
