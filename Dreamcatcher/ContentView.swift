@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import CoreSpotlight
 
 struct ContentView: View {
     @Bindable var dataController: DataController
@@ -73,5 +74,9 @@ struct ContentView: View {
         modelContext.insert(fifth)
         
         try? modelContext.save()
+		
+		Task {
+			try await CSSearchableIndex.default().indexAppEntities([first.entity, second.entity, third.entity, fourth.entity, fifth.entity])
+		}
     }
 }

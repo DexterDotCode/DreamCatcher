@@ -3,18 +3,30 @@
 //  Dreamcatcher
 //
 
+import AppIntents
 import SwiftData
 import SwiftUI
+import CoreSpotlight
 
 struct DreamList: View {
     @Query private var dreams: [Dream]
+	
+	@AppStorage("suggestIntent") var suggestIntent = true
 
     var body: some View {
         List {
-            ForEach(dreams) { dream in
-                NavigationLink(dream.title, value: dream)
-            }
+			Section {
+				ForEach(dreams) { dream in
+					NavigationLink(dream.title, value: dream)
+				}
+			} footer: {
+				VStack {
+					ShortcutsLink()
+					SiriTipView(intent: AddToRecentDreamIntent(), isVisible: $suggestIntent)
+				}
+			}
         }
+		.task(indexDreams)
     }
 
     init(searchText: String) {
@@ -27,4 +39,9 @@ struct DreamList: View {
             }
         }, sort: \.date, order: .reverse)
     }
+	
+	func indexDreams() async {
+		print("Indexing all dreams")
+		try? await CSSearchableIndex.default().indexAppEntities(dreams.map(\.entity))
+	}
 }

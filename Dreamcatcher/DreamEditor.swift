@@ -3,10 +3,12 @@
 //  Dreamcatcher
 //
 
+import CoreSpotlight
 import SwiftUI
 
 struct DreamEditor: View {
     @Bindable var dream: Dream
+	@State private var task: Task<Void, Error>?
 
     var body: some View {
         Form {
@@ -30,5 +32,17 @@ struct DreamEditor: View {
         }
         .navigationTitle($dream.title)
         .navigationBarTitleDisplayMode(.inline)
+		.onChange(of: dream.title, indexDream)
+		.onChange(of: dream.details, indexDream)
     }
+	
+	func indexDream() {
+		task?.cancel()
+		
+		task = Task {
+			try await Task.sleep(for: .seconds(3))
+			print("Indexing current dream")
+			try await CSSearchableIndex.default().indexAppEntities([dream.entity])
+		}
+	}
 }

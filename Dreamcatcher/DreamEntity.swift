@@ -8,7 +8,7 @@
 import AppIntents
 
 
-struct DreamEntity: AppEntity {
+struct DreamEntity: IndexedEntity {
 	var id: UUID
 	var title: String
 	var details: String
