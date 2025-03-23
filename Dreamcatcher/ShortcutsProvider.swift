@@ -8,7 +8,7 @@
 import AppIntents
 
 struct ShortcutsProvider: AppShortcutsProvider {
-	static let shortcutTileColor: ShortcutTileColor = .navy
+	static let shortcutTileColor: ShortcutTileColor = .yellow
 	
 	static var appShortcuts: [AppShortcut] {
 		AppShortcut(
@@ -19,17 +19,24 @@ struct ShortcutsProvider: AppShortcutsProvider {
 		)
 		
 		AppShortcut(
-			intent: DreamReminderIntent(),
-			phrases: ["Remind me of a dream \(.applicationName)"],
-			shortTitle: "Dream Reminder",
-			systemImageName: "clock"
-		)
-		
-		AppShortcut(
 			intent: AddToRecentDreamIntent(),
 			phrases: ["Add content to my last dream\(.applicationName)"],
 			shortTitle: "Add content to recent dream",
 			systemImageName: "moon.stars"
+		)
+		
+		AppShortcut(
+			intent: OpenDreamInApp(),
+			phrases: ["Open a dream in \(.applicationName) app"],
+			shortTitle: "Open Dream in App",
+			systemImageName: "sparkles"
+		)
+		
+		AppShortcut(
+			intent: OpenDreamDetails(),
+			phrases: ["Open a dream in \(.applicationName)"],
+			shortTitle: "Open Dream Details",
+			systemImageName: "moon.zzz"
 		)
 	}
 }

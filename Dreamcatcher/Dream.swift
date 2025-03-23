@@ -15,7 +15,7 @@ class Dream {
     var date: Date
 	
 	var entity: DreamEntity {
-		DreamEntity(id: uniqueID, title: title, details: details)
+		DreamEntity(id: uniqueID, title: title, details: details, date: date, intensity: intensity)
 	}
 
     init(title: String, details: String, intensity: Double, date: Date) {

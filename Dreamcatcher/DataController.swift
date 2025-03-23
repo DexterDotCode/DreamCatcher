@@ -40,4 +40,16 @@ class DataController {
 		let dreamDescriptor = FetchDescriptor<Dream>(predicate: predicate)
 		return try modelContext.fetchCount(dreamDescriptor)
 	}
+	
+	func select(entity: DreamEntity) throws {
+		let id = entity.id
+		
+		let results = try dreams(matching: #Predicate {
+			$0.uniqueID == id
+		})
+		
+		if let first = results.first {
+			path = [first]
+		}
+	}
 }
