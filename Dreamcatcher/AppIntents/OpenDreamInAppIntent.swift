@@ -8,7 +8,7 @@
 import AppIntents
 
 
-struct OpenDreamInApp: OpenIntent {
+struct OpenDreamInAppIntent: OpenIntent {
 	static let title: LocalizedStringResource = "Open dream"
 	
 	@Dependency var dataController: DataController

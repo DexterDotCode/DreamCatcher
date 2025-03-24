@@ -37,5 +37,16 @@ struct DreamcatcherApp: App {
 		self._dataController = .init(initialValue: dataController)
 		
 		AppDependencyManager.shared.add(dependency: dataController)
+		
+#if os(iOS)
+		let navBarAppearance = UINavigationBarAppearance()
+		navBarAppearance.backgroundColor = .bg
+		navBarAppearance.backgroundEffect = .none
+		navBarAppearance.shadowColor = .clear
+		
+		UINavigationBar.appearance().standardAppearance = navBarAppearance
+		UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+		UINavigationBar.appearance().compactAppearance = navBarAppearance
+#endif
 	}
 }

@@ -19,7 +19,6 @@ struct AddToRecentDreamIntent: AppIntent {
 	func perform() async throws -> some IntentResult & ProvidesDialog {
 		let dreams = try dataController.dreams(limit: 1)
 		
-		
 		if let first = dreams.first {
 			first.details.append("\(content)")
 			try? first.modelContext?.save()

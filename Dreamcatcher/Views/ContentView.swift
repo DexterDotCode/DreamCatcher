@@ -9,23 +9,26 @@ import CoreSpotlight
 struct ContentView: View {
     @Bindable var dataController: DataController
     @Environment(\.modelContext) var modelContext
+	@State private var isDreamCreated = false
 
     var body: some View {
         NavigationStack(path: $dataController.path) {
             DreamList(searchText: dataController.searchText)
+				.navigationDestination(for: Dream.self, destination: DreamEditor.init)
+				.safeAreaInset(edge: .bottom, alignment: .trailing, spacing: 10) {
+					NewDreamButton()
+						.padding()
+				}
+				.scrollContentBackground(.hidden)
+				.scrollIndicators(.hidden)
                 .searchable(text: $dataController.searchText)
-                .navigationTitle("Dreamcatcher")
-                .navigationDestination(for: Dream.self, destination: DreamEditor.init)
-                .toolbar {
-                    Button("Add Dream", systemImage: "plus", action: newDream)
-
-                    Button("Add Samples", action: addSamples)
-                }
+                .navigationTitle("Dreamscape")
+				.background(Color.bg)
         }
     }
 
     func newDream() {
-        let dream = Dream(title: "New dream", details: "", intensity: 0.5, date: .now)
+        let dream = Dream()
         modelContext.insert(dream)
         dataController.path = [dream]
     }
@@ -79,4 +82,23 @@ struct ContentView: View {
 			try await CSSearchableIndex.default().indexAppEntities([first.entity, second.entity, third.entity, fourth.entity, fifth.entity])
 		}
     }
+	
+	@ViewBuilder func NewDreamButton() -> some View {
+		Button {
+			newDream()
+			isDreamCreated.toggle()
+		} label: {
+			Image(systemName: "plus")
+				.font(.largeTitle)
+				.frame(width: 55, height: 55)
+				.background(Color.blue)
+				.foregroundStyle(.white)
+				.clipShape(Circle())
+		}
+		.accessibilityLabel("Create new dream")
+		.sensoryFeedback(.impact(flexibility: .rigid, intensity: 1.0), trigger: isDreamCreated)
+#if os(macOS)
+		.buttonStyle(.borderless)
+#endif
+	}
 }

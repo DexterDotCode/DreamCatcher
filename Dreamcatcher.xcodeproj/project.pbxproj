@@ -18,8 +18,10 @@
 		BB07C5C02D8DF1100029DBBC /* ShortcutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07C5BF2D8DF1100029DBBC /* ShortcutsProvider.swift */; };
 		BB1D85022D8E780D009480DE /* DreamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D85012D8E780D009480DE /* DreamEntity.swift */; };
 		BB1D85062D8EA3E1009480DE /* AddToRecentDreamIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D85052D8EA3E1009480DE /* AddToRecentDreamIntent.swift */; };
-		BB1D85082D8F1556009480DE /* OpenDreamIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D85072D8F1556009480DE /* OpenDreamIntent.swift */; };
+		BB1D85082D8F1556009480DE /* OpenDreamDetailsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D85072D8F1556009480DE /* OpenDreamDetailsIntent.swift */; };
 		BB42E8BD2D9033CA00925296 /* OpenDreamInAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42E8BC2D9033CA00925296 /* OpenDreamInAppIntent.swift */; };
+		BB42E8C32D9113AB00925296 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42E8C22D9113AB00925296 /* View+Extensions.swift */; };
+		BB42E8C52D91150700925296 /* DreamRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42E8C42D91150700925296 /* DreamRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,12 @@
 		BB07C5BF2D8DF1100029DBBC /* ShortcutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsProvider.swift; sourceTree = "<group>"; };
 		BB1D85012D8E780D009480DE /* DreamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamEntity.swift; sourceTree = "<group>"; };
 		BB1D85052D8EA3E1009480DE /* AddToRecentDreamIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToRecentDreamIntent.swift; sourceTree = "<group>"; };
-		BB1D85072D8F1556009480DE /* OpenDreamIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDreamIntent.swift; sourceTree = "<group>"; };
+		BB1D85072D8F1556009480DE /* OpenDreamDetailsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDreamDetailsIntent.swift; sourceTree = "<group>"; };
 		BB42E8BC2D9033CA00925296 /* OpenDreamInAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDreamInAppIntent.swift; sourceTree = "<group>"; };
+		BB42E8C22D9113AB00925296 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		BB42E8C42D91150700925296 /* DreamRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamRow.swift; sourceTree = "<group>"; };
+		BB42E8C62D9118F600925296 /* Dreamcatcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dreamcatcher.entitlements; sourceTree = "<group>"; };
+		BB42E8C72D9121B700925296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,18 +59,13 @@
 		51C500132D7AE34600A230C5 /* Dreamcatcher */ = {
 			isa = PBXGroup;
 			children = (
+				BB42E8C72D9121B700925296 /* Info.plist */,
+				BB42E8C62D9118F600925296 /* Dreamcatcher.entitlements */,
+				BB42E8C02D90EE8200925296 /* Model */,
+				BB42E8BF2D90EE7E00925296 /* Views */,
+				BB42E8BE2D90EE7900925296 /* AppIntents */,
+				BB42E8C12D91139F00925296 /* Support */,
 				51C5000C2D7AE34600A230C5 /* Assets.xcassets */,
-				51C5000D2D7AE34600A230C5 /* ContentView.swift */,
-				51C500122D7AE34600A230C5 /* DreamList.swift */,
-				51C500112D7AE34600A230C5 /* DreamEditor.swift */,
-				51C5000F2D7AE34600A230C5 /* Dream.swift */,
-				51C5000E2D7AE34600A230C5 /* DataController.swift */,
-				BB1D85072D8F1556009480DE /* OpenDreamIntent.swift */,
-				BB42E8BC2D9033CA00925296 /* OpenDreamInAppIntent.swift */,
-				BB07C5BD2D8DEF000029DBBC /* CountRecentDreamsIntent.swift */,
-				BB1D85012D8E780D009480DE /* DreamEntity.swift */,
-				BB1D85052D8EA3E1009480DE /* AddToRecentDreamIntent.swift */,
-				BB07C5BF2D8DF1100029DBBC /* ShortcutsProvider.swift */,
 				51C500102D7AE34600A230C5 /* DreamcatcherApp.swift */,
 			);
 			path = Dreamcatcher;
@@ -84,6 +85,47 @@
 				51C5FFF42D7ADC2300A230C5 /* Dreamcatcher.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BB42E8BE2D90EE7900925296 /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				BB07C5BD2D8DEF000029DBBC /* CountRecentDreamsIntent.swift */,
+				BB1D85052D8EA3E1009480DE /* AddToRecentDreamIntent.swift */,
+				BB42E8BC2D9033CA00925296 /* OpenDreamInAppIntent.swift */,
+				BB1D85072D8F1556009480DE /* OpenDreamDetailsIntent.swift */,
+				BB07C5BF2D8DF1100029DBBC /* ShortcutsProvider.swift */,
+			);
+			path = AppIntents;
+			sourceTree = "<group>";
+		};
+		BB42E8BF2D90EE7E00925296 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51C5000D2D7AE34600A230C5 /* ContentView.swift */,
+				51C500122D7AE34600A230C5 /* DreamList.swift */,
+				BB42E8C42D91150700925296 /* DreamRow.swift */,
+				51C500112D7AE34600A230C5 /* DreamEditor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB42E8C02D90EE8200925296 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51C5000F2D7AE34600A230C5 /* Dream.swift */,
+				51C5000E2D7AE34600A230C5 /* DataController.swift */,
+				BB1D85012D8E780D009480DE /* DreamEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB42E8C12D91139F00925296 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BB42E8C22D9113AB00925296 /* View+Extensions.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +202,7 @@
 			files = (
 				51C500152D7AE34600A230C5 /* ContentView.swift in Sources */,
 				51C500162D7AE34600A230C5 /* DataController.swift in Sources */,
+				BB42E8C52D91150700925296 /* DreamRow.swift in Sources */,
 				BB42E8BD2D9033CA00925296 /* OpenDreamInAppIntent.swift in Sources */,
 				BB1D85022D8E780D009480DE /* DreamEntity.swift in Sources */,
 				BB1D85062D8EA3E1009480DE /* AddToRecentDreamIntent.swift in Sources */,
@@ -167,7 +210,8 @@
 				51C500172D7AE34600A230C5 /* Dream.swift in Sources */,
 				BB07C5C02D8DF1100029DBBC /* ShortcutsProvider.swift in Sources */,
 				51C500182D7AE34600A230C5 /* DreamcatcherApp.swift in Sources */,
-				BB1D85082D8F1556009480DE /* OpenDreamIntent.swift in Sources */,
+				BB42E8C32D9113AB00925296 /* View+Extensions.swift in Sources */,
+				BB1D85082D8F1556009480DE /* OpenDreamDetailsIntent.swift in Sources */,
 				51C500192D7AE34600A230C5 /* DreamEditor.swift in Sources */,
 				51C5001A2D7AE34600A230C5 /* DreamList.swift in Sources */,
 			);
@@ -181,23 +225,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dreamcatcher/Dreamcatcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RH7GF9MW76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dreamcatcher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dreamscape;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.Dreamcatcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dextercode.dreamscape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -215,23 +264,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dreamcatcher/Dreamcatcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RH7GF9MW76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dreamcatcher/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dreamscape;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.Dreamcatcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dextercode.dreamscape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

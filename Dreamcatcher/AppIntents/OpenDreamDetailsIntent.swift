@@ -9,7 +9,7 @@ import AppIntents
 import SwiftUI
 
 
-struct OpenDreamDetails: AppIntent {
+struct OpenDreamDetailsIntent: AppIntent {
 	static let title: LocalizedStringResource = "Open dream"
 	@Parameter var target: DreamEntity
 	
@@ -22,30 +22,30 @@ struct OpenDreamDetails: AppIntent {
 				
 				HStack(spacing: 5) {
 					Text(target.date.formatted(date: .abbreviated, time: .omitted))
-						.font(.caption)
+						.font(.footnote)
 						.foregroundStyle(.secondary)
 					
 					Text("•")
-						.font(.caption)
+						.font(.footnote)
 						.foregroundStyle(.secondary)
 					
 					Text(String(format: "Intensity: %.2f", target.intensity))
-						.font(.caption)
+						.font(.footnote)
 						.foregroundStyle(.secondary)
 				}
-					
-				
 				VStack(alignment: .leading, spacing: 7) {
-					
 					Divider()
 					
 					Text(target.details)
-						.font(.subheadline)
-					
-					Button(intent: OpenDreamInApp(target: $target), label: {
-						Text("Open")
+						.font(.headline)
+						.fontWeight(.regular)
+
+					Button(intent: OpenDreamInAppIntent(target: $target), label: {
+						HStack(spacing: 5) {
+							Text("Open")
+							Image(systemName: "arrow.up.right.circle.fill")
+						}
 					})
-					.buttonBorderShape(.roundedRectangle)
 				}
 			}
 			.padding()
